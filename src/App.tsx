@@ -390,6 +390,16 @@ export default function App() {
     showToast(t.success_delete, 'success');
   };
 
+  const handleDeleteAllProducts = async () => {
+    if (!window.confirm(t.confirm_delete)) return;
+    setLoading(true);
+    await deleteAllProducts();
+    await fetchProducts();
+    await loadConfig();
+    setLoading(false);
+    showToast(t.success_delete, 'success');
+  };
+
   const handleImportProducts = async () => {
     if (!importProductsText.trim()) return;
     const lines = importProductsText.split('\n');
@@ -1094,7 +1104,16 @@ export default function App() {
                         <tr>
                           <th className="px-3 py-2 font-medium text-zinc-600">{t.order_no}</th>
                           <th className="px-3 py-2 font-medium text-zinc-600">{t.color_code}</th>
-                          <th className="px-3 py-2 w-10"></th>
+                          <th className="px-3 py-2 text-right w-24">
+                            {productsList.length > 0 && (
+                              <button 
+                                onClick={handleDeleteAllProducts}
+                                className="text-red-500 hover:text-red-700 font-bold text-[10px] uppercase tracking-wide bg-red-50 px-2 py-1 rounded"
+                              >
+                                {t.delete_all}
+                              </button>
+                            )}
+                          </th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-zinc-100">
