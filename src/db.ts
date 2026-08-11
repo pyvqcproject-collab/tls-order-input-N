@@ -353,20 +353,29 @@ export const deleteProduct = async (orderNo: string) => {
 
 export const deleteAllProducts = async () => {
   const querySnapshot = await getDocs(collection(db, 'products'));
-  const batch = writeBatch(db);
-  querySnapshot.forEach((doc) => {
-    batch.delete(doc.ref);
-  });
-  await batch.commit();
+  
+  const docs = querySnapshot.docs;
+  for (let i = 0; i < docs.length; i += 500) {
+    const chunk = docs.slice(i, i + 500);
+    const batch = writeBatch(db);
+    chunk.forEach((doc) => {
+      batch.delete(doc.ref);
+    });
+    await batch.commit();
+  }
+
   return { success: true };
 };
 
 export const importProducts = async (data: {orderNo: string, colorCode: string}[]) => {
-  const batch = writeBatch(db);
-  data.forEach(item => {
-    const ref = doc(db, 'products', item.orderNo);
-    batch.set(ref, item);
-  });
-  await batch.commit();
+  for (let i = 0; i < data.length; i += 500) {
+    const chunk = data.slice(i, i + 500);
+    const batch = writeBatch(db);
+    chunk.forEach(item => {
+      const ref = doc(db, 'products', item.orderNo);
+      batch.set(ref, item);
+    });
+    await batch.commit();
+  }
   return { success: true };
 };
