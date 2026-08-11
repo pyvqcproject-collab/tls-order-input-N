@@ -391,7 +391,6 @@ export default function App() {
   };
 
   const handleDeleteAllProducts = async () => {
-    if (!window.confirm(t.confirm_delete)) return;
     setLoading(true);
     await deleteAllProducts();
     await fetchProducts();
