@@ -1,21 +1,21 @@
 export const i18n = {
   vi: {
-    loading: "Đang tải...", login_desc: "Thêm đơn hệ thống", card_id: "Mã số nhân viên",
+    loading: "Đang tải...", login_desc: "Hệ thống nhập đơn hàng sản xuất", card_id: "Mã thẻ (Card ID)",
     password: "Mật khẩu", login_btn: "Đăng nhập", go_register: "Chưa có tài khoản? Đăng ký ngay",
-    register_title: "Đăng ký tài khoản", full_name: "Họ và tên", floor: "Lầu", line: "Chuyền",
+    register_title: "Đăng ký tài khoản", full_name: "Họ và tên", floor: "Lầu (Floor)", line: "Chuyền (Line)",
     register_btn: "Đăng ký", go_login: "Quay lại đăng nhập", logout: "Đăng xuất", lock_system: "Khóa hệ thống (Chỉ Admin mới được gửi)",
-    order_no: "Đơn hàng", color_code: "Mã Màu", note: "Ghi chú",
-    add_to_list: "Thêm vào list", shared_queue: "Danh sách chờ", submit_all: "Gửi toàn bộ dữ liệu",
+    order_no: "Mã Đơn hàng (Order No)", color_code: "Mã Màu (Color Code)", note: "Ghi chú (Note)",
+    add_to_list: "Thêm vào list", shared_queue: "Danh sách chờ (Shared Queue)", submit_all: "Gửi toàn bộ dữ liệu",
     history: "Lịch sử nhập liệu", export_excel: "Xuất Excel", nav_input: "Nhập liệu", nav_history: "Lịch sử",
     msg_sys_locked: "Admin đang thêm đơn, vui lòng chờ trong giây lát!", msg_fill_all: "Vui lòng điền đủ thông tin", msg_select_export: "Chọn ít nhất 1 dòng để xuất", msg_select_delete: "Chọn ít nhất 1 dòng để xóa",
     select_floor: "-- Chọn Lầu --", select_line: "-- Chọn Chuyền --",
     success_register: "Đăng ký thành công. Vui lòng chờ admin duyệt.",
     err_card_exists: "Mã thẻ đã tồn tại.",
-    err_inactive: "Tài khoản chưa được kích hoạt",
+    err_inactive: "Tài khoản chưa được kích hoạt (PENDING).",
     err_wrong_pass: "Sai mã thẻ hoặc mật khẩu.",
     success_submit: "Đã gửi thành công",
     success_delete: "Đã xóa thành công",
-    orders: "Đơn hàng.",
+    orders: "đơn hàng.",
     admin_controls: "Admin Controls",
     employee: "Nhân viên",
     select_employee: "-- Chọn Nhân viên --",
@@ -47,7 +47,8 @@ export const i18n = {
     role_user: "Nhân viên",
     confirm_delete: "Bạn có chắc chắn muốn xóa?",
     update: "Cập nhật",
-    time: "Thời gian"
+    time: "Thời gian",
+    delete_all: "Xóa tất cả"
   },
   en: {
     loading: "Loading...", login_desc: "Production Order Input System", card_id: "Card ID",
@@ -97,7 +98,8 @@ export const i18n = {
     role_user: "User",
     confirm_delete: "Are you sure you want to delete?",
     update: "Update",
-    time: "Time"
+    time: "Time",
+    delete_all: "Delete All"
   },
   cn: {
     loading: "載入中...", login_desc: "生產訂單輸入系統", card_id: "卡號 (Card ID)",
@@ -147,7 +149,8 @@ export const i18n = {
     role_user: "用戶",
     confirm_delete: "您確定要刪除嗎？",
     update: "更新",
-    time: "時間"
+    time: "時間",
+    delete_all: "刪除全部"
   }
 };
 
