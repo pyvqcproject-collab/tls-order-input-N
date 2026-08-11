@@ -351,6 +351,16 @@ export const deleteProduct = async (orderNo: string) => {
   return { success: true };
 };
 
+export const deleteAllProducts = async () => {
+  const querySnapshot = await getDocs(collection(db, 'products'));
+  const batch = writeBatch(db);
+  querySnapshot.forEach((doc) => {
+    batch.delete(doc.ref);
+  });
+  await batch.commit();
+  return { success: true };
+};
+
 export const importProducts = async (data: {orderNo: string, colorCode: string}[]) => {
   const batch = writeBatch(db);
   data.forEach(item => {
