@@ -11,7 +11,7 @@ import {
   getHistoryData, markAsDownloaded, setSystemLock,
   getSettingsList, addSetting, deleteSetting, importSettings,
   getUsersList, updateUserStatus, deleteUser, updateUser,
-  getProductsList, addProduct, deleteProduct, importProducts,
+  getProductsList, addProduct, deleteProduct, importProducts, deleteAllProducts,
   updateQueueItem, deleteHistory, updateAppInfo
 } from './db';
 import { Loader2, Edit, History, X, Check, Shield, Send, Plus, LogOut, FileSpreadsheet, Settings, Users, Package, Trash2 } from 'lucide-react';
